@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+header {
+    padding: 2rem;
+    background-color: whitesmoke;
+    color: rgb(90, 56, 202);
+}
+
+
+header h1 {
+    text-align: center;
+    font-family: cursive;
+    font-size: 3rem;
+    font-style: italic;
+}
+
+
+body {
+    background-color: rgb(90, 56, 202);
+}
+
+
+main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+
+#taxCalculator {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 4.5rem 2rem 2rem;
+    gap: 1rem;
+    width: 40%;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2.5rem;
+}
+
+
+input, select {
+    width: 100%;
+    border: 1px groove gray;
+    padding: 0.5rem;
+}
+
+
+#calculate-tax {
+    padding: 0.5rem;
+    background-color: rgb(90, 56, 202);
+    color: whitesmoke;
+}
+
+
+input, select, button {
+    border-radius: 2.5px;
+}
+
+
+input, select {
+    color: rgb(188, 179, 179);
+}
+
+
+.result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 40%;
+    min-height: 500px;
+    z-index: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+#closeResult {
+    padding: 0.5rem;
+    color: whitesmoke;
+    background-color: rgb(90, 56, 202);
+    border-radius: 5px;
+}
+
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+
+.info {
+    font-size: 0.65rem;
+    border: 1px solid gray;
+    border-radius: 50%;
+}
+
+
+.info:hover {
+    cursor: pointer;
+}
+
+
+.input-field {
+    position: relative;
+}
+
+
+.error {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    font-size: 0.65rem;
+    border: 1px solid rgb(152, 25, 25);
+    border-radius: 50%;
+    padding: 1.5px;
+}
+
+
+.error div {
+    position: relative;
+}
+
+
+.error:hover {
+    cursor: pointer;
+}
+
+
+.error-tool-tip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: rgb(64, 71, 107);;
+    color: whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.75rem;
+}
+
+
+.error-tool-tip::after {
+    content: " ";
+    position: absolute;
+    top: 98%;
+    left: 10%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(64, 71, 107) transparent transparent transparent;
+}
+
+
+.error:hover span{
+    visibility: visible;
+}
+
+/* Making the webpage responsive for smaller screens */
+
+
+@media screen and (max-width: 1200px) {
+
+    #taxCalculator {
+        width: 60%;
+    }
+
+    .result {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    #taxCalculator {
+        width: 80%;
+    }
+
+    .result {
+        width: 90%;
+    }
+
+    .error-tool-tip {
+        min-width: 150px;
+    }
+}
+
+
+@media screen and (max-width: 385px) {
+
+    #taxCalculator {
+        width: 90%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .result {
+        width: 99%;
+    }
+
+    .error-tool-tip {
+        min-width: 50px;
+    }
+
+    label {
+        font-size: 0.75rem;
+    }
+}
